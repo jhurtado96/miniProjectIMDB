@@ -2,6 +2,8 @@ import { Movie } from "./Movie"
 import { Professional } from "./Professional"
 import { Imdb } from "./imdb"
 
+
+
 //Movie 1
 let movie1 = new Movie("Cadena Perpetua", 1994, "EEUU", "drama");
 //profesionales movie1
@@ -58,3 +60,17 @@ movie2.mostrarDatosPeliculas();
 let arrPelis = [movie1, movie2]
 let imdb = new Imdb(arrPelis)
 imdb.mostrarIMBD()
+
+// JSON
+console.log(JSON.stringify(imdb))
+
+const fs=require('fs');
+
+fs.writeFile('./archivo1.txt', 'línea 1\nLínea 2', error => {
+  if (error)
+    console.log(error);
+  else
+    console.log('El archivo fue creado');
+});
+
+console.log('última línea del programa');
