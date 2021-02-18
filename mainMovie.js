@@ -54,4 +54,10 @@ var arrPelis = [movie1, movie2];
 var imdb = new imdb_1.Imdb(arrPelis);
 imdb.mostrarIMBD();
 // JSON
+<<<<<<< HEAD
 console.log(JSON.stringify(imdb));
+=======
+var imdb1 = JSON.stringify(imdb);
+var fs = require('fs');
+fs.writeFileSync("imdbBBDD.json", imdb1);
+>>>>>>> rama-javi

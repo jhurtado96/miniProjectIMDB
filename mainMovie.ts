@@ -2,6 +2,8 @@ import { Movie } from "./Movie"
 import { Professional } from "./Professional"
 import { Imdb } from "./imdb"
 
+
+
 //Movie 1
 let movie1 = new Movie("Cadena Perpetua", 1994, "EEUU", "drama");
 //profesionales movie1
@@ -59,5 +61,10 @@ let arrPelis = [movie1, movie2]
 let imdb = new Imdb(arrPelis)
 imdb.mostrarIMBD()
 
+
 // JSON
-console.log(JSON.stringify(imdb))
+let imdb1=JSON.stringify(imdb)
+
+const fs=require('fs');
+
+fs.writeFileSync("imdbBBDD.json",imdb1)
