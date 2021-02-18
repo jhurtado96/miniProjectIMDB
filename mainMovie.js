@@ -53,3 +53,7 @@ movie2.mostrarDatosPeliculas();
 var arrPelis = [movie1, movie2];
 var imdb = new imdb_1.Imdb(arrPelis);
 imdb.mostrarIMBD();
+// JSON
+var imdb1 = JSON.stringify(imdb);
+var fs = require('fs');
+fs.writeFileSync("imdbBBDD.json", imdb1);

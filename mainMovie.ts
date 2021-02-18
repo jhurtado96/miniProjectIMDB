@@ -61,16 +61,10 @@ let arrPelis = [movie1, movie2]
 let imdb = new Imdb(arrPelis)
 imdb.mostrarIMBD()
 
+
 // JSON
-console.log(JSON.stringify(imdb))
+let imdb1=JSON.stringify(imdb)
 
 const fs=require('fs');
 
-fs.writeFile('./archivo1.txt', 'línea 1\nLínea 2', error => {
-  if (error)
-    console.log(error);
-  else
-    console.log('El archivo fue creado');
-});
-
-console.log('última línea del programa');
+fs.writeFileSync("imdbBBDD.json",imdb1)
