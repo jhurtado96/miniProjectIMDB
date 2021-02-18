@@ -1,5 +1,6 @@
 import{Movie} from "./Movie"
 import { Professional } from "./Professional"
+import {Imdb} from "./imdb"
 //profesionales
 let profesionalcito1 = new Professional("Pablo",33,"Masculino",68,1.83,"Rubio","Azul","Blanco",false,"Espanyol",3,"Actor")
 let profesionalcito2 = new Professional("Luis",43,"Masculino",88,1.89,"Catanyo","Marron","Negro",true,"Noruego",3,"Manager")
@@ -23,8 +24,33 @@ movie1.setGenre("drama");
 movie1.setIsMCU(true);
 movie1.setPlataform("Netflix");
 
+movie2.setActors(profesionalArr);
+movie2.setWriter(profesionalcito2);
+movie2.setDistributor(profesionalcito3);
+movie2.setDirector(profesionalcito2);
+movie2.setProducer(profesionalcito1)
+movie2.setGenre("drama");
+movie2.setIsMCU(true);
+movie2.setPlataform("Netflix");
+
+
+movie3.setActors(profesionalArr);
+movie3.setWriter(profesionalcito2);
+movie3.setDistributor(profesionalcito3);
+movie3.setDirector(profesionalcito2);
+movie3.setProducer(profesionalcito1)
+movie3.setGenre("drama");
+movie3.setIsMCU(true);
+movie3.setPlataform("Netflix");
+
+let arrPelis = [movie1,movie2,movie3]
+
+let imdb = new Imdb(arrPelis)
+
+imdb.mostrarIMBD()
+
 //Mostrar metodos
-movie1.mostrarDatosPeliculas();
+
 /*movie2.mostrarDatosPeliculas();
 movie3.mostrarDatosPeliculas();
 movie4.mostrarDatosPeliculas();
@@ -38,6 +64,8 @@ console.log(movie1.getDistributor());
 console.log(movie1.getGenre());
 console.log(movie1.getTitle());
 console.log(movie2.getTitle());*/
+
+
 
 
 
