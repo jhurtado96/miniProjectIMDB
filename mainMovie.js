@@ -53,3 +53,5 @@ movie2.mostrarDatosPeliculas();
 var arrPelis = [movie1, movie2];
 var imdb = new imdb_1.Imdb(arrPelis);
 imdb.mostrarIMBD();
+// JSON
+console.log(JSON.stringify(imdb));
