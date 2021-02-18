@@ -2,65 +2,60 @@ import { Movie } from "./Movie"
 import { Professional } from "./Professional"
 import { Imdb } from "./imdb"
 const fs=require('fs')
+let JSONpeliculas;
 
-//Movie 1
-let movie1 = new Movie("Cadena Perpetua", 1994, "EEUU", "drama");
-//profesionales movie1
-let director1 = new Professional("Frank Darabont", 33, "Masculino", 68, 1.83, "Rubio", "Azul", "Blanco", false, "Estadounidense", 3, "Director")
-let distributor1 = new Professional("Luis", 43, "Masculino", 88, 1.89, "Catanyo", "Marron", "Negro", true, "Noruego", 1, "distribuidor")
-let writer1 = new Professional("Stephen King", 53, "Masculino", 98, 1.93, "Pelirrojo", "Verde", "Amarillo", false, "Espanyol", 2, "guionista")
-let producer1 = new Professional("John Steward", 53, "Masculino", 75, 1.73, "Pelirrojo", "Verde", "Amarillo", false, "Espanyol", 0, "productor")
-let actor1Movie1 = new Professional("Tim Robbins", 62, "Masculino", 70, 1.75, "Castanyo", "Verde", "Blanco", false, "estadounidense", 3, "actor")
-let actor2Movie1 = new Professional("Morgan Freeman", 83, "Masculino", 81, 1.90, "Gris", "Marron", "Negro", false, "Estadounidense", 1, "actor")
-let actors1 = [actor1Movie1, actor2Movie1]
+JSONpeliculas = JSON.parse(fs.readFileSync("./imdbBBDD.json"))
+//ESTO YA ES UN JSON
+console.log(JSONpeliculas)
+//Cosas que necesitamos: saber como leer valores por teclado
+//Preguntar: Creamos objeto de imbd completo pidiendo datos de cada una de las clases creadas? Es decir:
+/*
+De profesional creamos profesionalcito pidiendo al usuario los valores por consola.
+De Pelicula creamos la pelicula con sus atributos y LOS OBJETOS DE LA CLASE PROFESIONAL
+PERO TODO ELLO DENTRO DEL JSON??
+ej:
 
-//Movie2
-let movie2 = new Movie("Vengadores: infinity war", 2018, "EEUU", "accion")
-//Profesionales Movie2
-let director2 = new Professional("Anthony Russo", 43, "Masculino", 78, 1.83, "Moreno", "Verde", "Blanco", false, "Estadounidense", 2, "Director")
-let distributor2 = new Professional("Rose Evans", 43, "Femenino", 64, 1.55, "Pelirroja", "Marron", "Negra", true, "Estadounidense", 0, "distribuidor")
-let writer2 = new Professional("Christopher Markus", 48, "Masculino", 76, 1.77, "Pelirrojo", "Verde", "Amarillo", false, "Canadiense", 3, "guionista")
-let producer2 = new Professional("Trench Ruffalo", 73, "Masculino", 70, 1.73, "rubio", "Verde", "Amarillo", false, "Ingles", 3, "productor")
-let actor1Movie2 = new Professional("Robert Downey Jr", 55, "Masculino", 71, 1.73, "Moreno", "Marron", "Blanco", false, "Estadounidense", 0, "actor")
-let actor2Movie2 = new Professional("Chris Evans", 39, "Masculino", 82, 1.91, "Rubio", "Azul", "Blanco", false, "Estadounidense", 0, "actor")
-
-let actors2 = [actor1Movie2, actor2Movie2]
-
-//Metodos set movie 1
-movie1.setActors(actors1);
-movie1.setWriter(writer1);
-movie1.setDistributor(distributor1);
-movie1.setDirector(director1);
-movie1.setProducer(producer1)
-movie1.setGenre("drama");
-movie1.setIsMCU(false);
-movie1.setPlataform("Netflix");
-movie1.setNationality("EEUU y Canada");
-movie1.setLanguaje("ingles");
-movie1.setMainCharacterName("Andrew Dufresne")
-movie1.mostrarDatosPeliculas();
+let pelicula= new Pelicula();
+crear objeto pelicula con los valores  pasados por consola.(no se si actores y demas tbn)
+jsonpeliculas.push(peliculanueva)
 
 
-//Metodos set movie 2
-movie2.setActors(actors2);
-movie2.setWriter(writer2);
-movie2.setDistributor(distributor2);
-movie2.setDirector(director2);
-movie2.setProducer(producer2)
-movie2.setGenre("acción y drama");
-movie2.setIsMCU(true);
-movie2.setPlataform("Disney");
-movie2.setNationality("EEUU");
-movie2.setLanguaje("ingles");
-movie2.setMainCharacterName("Tony Stark")
-movie2.mostrarDatosPeliculas();
+*/
 
-//Clase Imdb
-let arrPelis = [movie1, movie2]
-let imdb = new Imdb(arrPelis)
-imdb.mostrarIMBD()
 
-let objetitoImdb = new Imdb(arrPelis)
 
-objetitoImdb.escribirEnFicheroJSON("manejoJSON.json")
-objetitoImdb.obtenerInstanciaIMDB("manejoJSON.json")
+
+// COPIO Y PEGO EL ARCHIVO JSON PARA VERLO MAS CLARO
+let jason={"peliculas":[{"title":"Cadena Perpetua","releaseYear":1994,"nationality":"EEUU y Canada","genre":"drama",
+"actors":[{"name":"Tim Robbins","age":62,"genre":"Masculino","weight":70,"height":1.75,"hairColor":"Castanyo","eyeColor":"Verde","race":"Blanco","isRetired":false,"nationality":"estadounidense","oscarsNumber":3,"profession":"actor"},
+        
+        {"name":"Morgan Freeman","age":83,"genre":"Masculino","weight":81,"height":1.9,"hairColor":"Gris","eyeColor":"Marron","race":"Negro","isRetired":false,"nationality":"Estadounidense","oscarsNumber":1,"profession":"actor"}],
+       
+        "writer":{"name":"Stephen King","age":53,"genre":"Masculino","weight":98,"height":1.93,"hairColor":"Pelirrojo","eyeColor":"Verde","race":"Amarillo","isRetired":false,"nationality":"Espanyol","oscarsNumber":2,"profession":"guionista"},
+       
+        "distributor":{"name":"Luis","age":43,"genre":"Masculino","weight":88,"height":1.89,"hairColor":"Catanyo","eyeColor":"Marron","race":"Negro","isRetired":true,"nationality":"Noruego","oscarsNumber":1,"profession":"distribuidor"},
+       
+        "director":{"name":"Frank Darabont","age":33,"genre":"Masculino","weight":68,"height":1.83,"hairColor":"Rubio","eyeColor":"Azul","race":"Blanco","isRetired":false,"nationality":"Estadounidense","oscarsNumber":3,"profession":"Director"},
+       
+        "producer":{"name":"John Steward","age":53,"genre":"Masculino","weight":75,"height":1.73,"hairColor":"Pelirrojo","eyeColor":"Verde","race":"Amarillo","isRetired":false,"nationality":"Espanyol","oscarsNumber":0,"profession":"productor"},
+        "isMCU":false,"plataform":"Netflix","languaje":"ingles","mainCharacterName":"Andrew Dufresne"},
+        
+        
+        
+        
+        
+        {"title":"Vengadores: infinity war","releaseYear":2018,"nationality":"EEUU","genre":"acción y drama",
+        "actors":[{"name":"Robert Downey Jr","age":55,"genre":"Masculino","weight":71,"height":1.73,"hairColor":"Moreno","eyeColor":"Marron","race":"Blanco","isRetired":false,"nationality":"Estadounidense","oscarsNumber":0,"profession":"actor"},
+        {"name":"Chris Evans","age":39,"genre":"Masculino","weight":82,"height":1.91,"hairColor":"Rubio","eyeColor":"Azul","race":"Blanco","isRetired":false,"nationality":"Estadounidense","oscarsNumber":0,"profession":"actor"}],
+        "writer":{"name":"Christopher Markus","age":48,"genre":"Masculino","weight":76,"height":1.77,"hairColor":"Pelirrojo","eyeColor":"Verde","race":"Amarillo","isRetired":false,"nationality":"Canadiense","oscarsNumber":3,"profession":"guionista"},
+        "distributor":{"name":"Rose Evans","age":43,"genre":"Femenino","weight":64,"height":1.55,"hairColor":"Pelirroja","eyeColor":"Marron","race":"Negra","isRetired":true,"nationality":"Estadounidense","oscarsNumber":0,"profession":"distribuidor"},
+        "director":{"name":"Anthony Russo","age":43,"genre":"Masculino","weight":78,"height":1.83,"hairColor":"Moreno","eyeColor":"Verde","race":"Blanco","isRetired":false,"nationality":"Estadounidense","oscarsNumber":2,"profession":"Director"},
+        "producer":{"name":"Trench Ruffalo","age":73,"genre":"Masculino","weight":70,"height":1.73,"hairColor":"rubio","eyeColor":"Verde","race":"Amarillo","isRetired":false,"nationality":"Ingles","oscarsNumber":3,"profession":"productor"},
+        "isMCU":true,"plataform":"Disney","languaje":"ingles","mainCharacterName":"Tony Stark"}]}
+
+
+        // console.log(JSONpeliculas.async function name(params:type) {
+            
+        // })
+         
+        console.log(JSONpeliculas)
