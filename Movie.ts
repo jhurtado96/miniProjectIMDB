@@ -128,6 +128,7 @@ export class Movie{
     }
 
     public mostrarDatosPeliculas(){
+        console.log("*******************************")
         console.log("Peliculas: ")
         console.log("Tittle: "+ this.title)
         console.log("Release year: "+this.releaseYear)
@@ -146,6 +147,7 @@ export class Movie{
         console.log("Producer: "+ this.producer.mostrarDatos())
         console.log("Distributor: "+this.distributor.mostrarDatos())
         console.log("Genre: "+ this.genre)
+        console.log("*******************************")
     }
 
 

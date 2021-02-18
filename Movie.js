@@ -87,6 +87,7 @@ var Movie = /** @class */ (function () {
         this.genre = genre;
     };
     Movie.prototype.mostrarDatosPeliculas = function () {
+        console.log("*******************************");
         console.log("Peliculas: ");
         console.log("Tittle: " + this.title);
         console.log("Release year: " + this.releaseYear);
@@ -105,6 +106,7 @@ var Movie = /** @class */ (function () {
         console.log("Producer: " + this.producer.mostrarDatos());
         console.log("Distributor: " + this.distributor.mostrarDatos());
         console.log("Genre: " + this.genre);
+        console.log("*******************************");
     };
     return Movie;
 }());
