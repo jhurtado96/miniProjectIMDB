@@ -59,7 +59,7 @@ movie2.mostrarDatosPeliculas();
 //Clase Imdb
 let arrPelis = [movie1, movie2]
 let imdb = new Imdb(arrPelis)
-imdb.mostrarIMBD()
+// imdb.mostrarIMBD()
 
 
 let imdb1=JSON.stringify(imdb)
