@@ -2,6 +2,7 @@
 exports.__esModule = true;
 var Movie_1 = require("./Movie");
 var Professional_1 = require("./Professional");
+var imdb_1 = require("./imdb");
 //Movie 1
 var movie1 = new Movie_1.Movie("Cadena Perpetua", 1994, "EEUU", "drama");
 //profesionales movie1
@@ -48,3 +49,7 @@ movie2.setNationality("EEUU");
 movie2.setLanguaje("ingles");
 movie2.setMainCharacterName("Tony Stark");
 movie2.mostrarDatosPeliculas();
+//Clase Imdb
+var arrPelis = [movie1, movie2];
+var imdb = new imdb_1.Imdb(arrPelis);
+imdb.mostrarIMBD();
