@@ -137,13 +137,15 @@ export class Movie{
             }
         }
         console.log("Nacionality: "+this.nationality)
-        console.log("Director: " + this.director)
-        console.log("Writer: " + this.writer)
+        console.log("Director: " + this.director.mostrarDatos())
+        console.log("Writer: " + this.writer.mostrarDatos())
         console.log("Language: " + this.languaje)
         console.log("Plataform: " +this.plataform)
         console.log("Is MCU?: " +this.isMCU)
-        console.log()
-        
+        console.log("Main character name: "+this.mainCharacterName)
+        console.log("Producer: "+ this.producer.mostrarDatos())
+        console.log("Distributor: "+this.distributor.mostrarDatos())
+        console.log("Genre: "+ this.genre)
     }
 
 
