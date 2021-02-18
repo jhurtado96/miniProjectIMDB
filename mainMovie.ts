@@ -62,9 +62,12 @@ let imdb = new Imdb(arrPelis)
 imdb.mostrarIMBD()
 
 
-// JSON
 let imdb1=JSON.stringify(imdb)
-
 const fs=require('fs');
-
 fs.writeFileSync("imdbBBDD.json",imdb1)
+fs.readFileSync("imdbBBDD.json")
+console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")
+))
+imdb.escribirEnFicheroJSON("ficherito")
+
+
