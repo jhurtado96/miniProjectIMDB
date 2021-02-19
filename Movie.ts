@@ -1,20 +1,28 @@
-import {Professional} from "./Professional"
+import { Professional } from "./Professional"
 
-export class Movie{
-    private title:string
-    private releaseYear:number
-    private actors:Professional[]
-    private nationality:string
-    private director:Professional
-    private writer:Professional
-    private languaje:string
-    private plataform:string
-    private isMCU:boolean
-    private mainCharacterName:string
-    private producer:Professional
-    private distributor:Professional
-    private genre:string
+export class Movie {
+    private title: string
+    private releaseYear: number
+    private actors: Professional[]
+    private nationality: string
+    private director: Professional
+    private writer: Professional
+    private languaje: string
+    private plataform: string
+    private isMCU: boolean
+    private mainCharacterName: string
+    private producer: Professional
+    private distributor: Professional
+    private genre: string
 
+    constructor(tittle: string, releaseYear: number, nationality: string, genre: string) {
+        this.title = tittle
+        this.releaseYear = releaseYear
+        this.nationality = nationality
+        this.genre = genre
+    }
+
+    //Metodos:
     public getTitle(): string {
         return this.title;
     }
@@ -119,39 +127,31 @@ export class Movie{
         this.genre = genre;
     }
 
-
-    constructor(tittle:string,releaseYear:number,nationality:string,genre:string){
-        this.title=tittle
-        this.releaseYear=releaseYear
-        this.nationality=nationality
-        this.genre=genre
-    }
-
-    public mostrarDatosPeliculas(){
+    public mostrarDatosPeliculas() {
         console.log("*******************************")
         console.log("Peliculas: ")
-        console.log("Tittle: "+ this.title)
-        console.log("Release year: "+this.releaseYear)
+        console.log("Tittle: " + this.title)
+        console.log("Release year: " + this.releaseYear)
         console.log("Actors: ")
-        for(let i = 0; i<this.getActors().length;i++){
-            
-                this.getActors()[i].mostrarDatos()
-            
+        for (let i = 0; i < this.getActors().length; i++) {
+
+            this.getActors()[i].mostrarDatos()
+
         }
-        console.log("Nacionality: "+this.nationality)
+        console.log("Nacionality: " + this.nationality)
         console.log("Director: ")
-         this.director.mostrarDatos()
+        this.director.mostrarDatos()
         console.log("Writer: ")
         this.writer.mostrarDatos()
         console.log("Language: " + this.languaje)
-        console.log("Plataform: " +this.plataform)
-        console.log("Is MCU?: " +this.isMCU)
-        console.log("Main character name: "+this.mainCharacterName)
-        console.log("Producer: ") 
+        console.log("Plataform: " + this.plataform)
+        console.log("Is MCU?: " + this.isMCU)
+        console.log("Main character name: " + this.mainCharacterName)
+        console.log("Producer: ")
         this.producer.mostrarDatos()
         console.log("Distributor: ")
         this.distributor.mostrarDatos()
-        console.log("Genre: "+ this.genre)
+        console.log("Genre: " + this.genre)
         console.log("*******************************")
     }
 

@@ -1,50 +1,47 @@
-export class Professional{
+export class Professional {
+    private name: string
+    private age: number
+    private genre: string
+    private weight: number
+    private height: number
+    private hairColor: string
+    private eyeColor: string
+    private race: string
+    private isRetired: boolean
+    private nationality: string
+    private oscarsNumber: number
+    private profession: string
 
-    private name:string
-    private age:number
-    private genre:string
-    private weight:number
-    private height:number
-    private hairColor:string
-    private eyeColor:string
-    private race:string
-    private isRetired:boolean
-    private nationality:string
-    private oscarsNumber:number
-    private profession:string
-
-    constructor(name,age,genre,weight,height,hairColor,eyeColor,race,isRetired,nationality,oscarsNumber,profession){
-        this.name=name
-        this.age=age
-        this.genre=genre
-        this.weight=weight
-        this.height=height
-        this.hairColor=hairColor
-        this.eyeColor=eyeColor
-        this.race=race
-        this.isRetired=isRetired
-        this.nationality=nationality
-        this.oscarsNumber=oscarsNumber
-        this.profession=profession
+    constructor(name, age, genre, weight, height, hairColor, eyeColor, race, isRetired, nationality, oscarsNumber, profession) {
+        this.name = name
+        this.age = age
+        this.genre = genre
+        this.weight = weight
+        this.height = height
+        this.hairColor = hairColor
+        this.eyeColor = eyeColor
+        this.race = race
+        this.isRetired = isRetired
+        this.nationality = nationality
+        this.oscarsNumber = oscarsNumber
+        this.profession = profession
     }
-//Metodo mostrar datos de todos los atributos
-    public mostrarDatos(){
-        console.log("****************************")
+    //Metodo mostrar datos de todos los atributos
+    public mostrarDatos() {
         console.log(" - Name: " + this.name)
         console.log(" - Age: " + this.age)
         console.log(" - Genre: " + this.genre)
-        console.log(" - Weight: " + this.weight)        
-        console.log(" - Height: " + this.height)        
-        console.log(" - Hair color: " + this.hairColor)    
+        console.log(" - Weight: " + this.weight)
+        console.log(" - Height: " + this.height)
+        console.log(" - Hair color: " + this.hairColor)
         console.log(" - Eye color: " + this.eyeColor)
         console.log(" - Race: " + this.race)
         console.log(" - Is retired?: " + this.isRetired)
-        console.log(" - Nationality :" + this.nationality)    
-        console.log(" - Oscars Number :" + this.oscarsNumber) 
-        console.log(" - Profession :" + this.profession) 
+        console.log(" - Nationality: " + this.nationality)
+        console.log(" - Oscars Number: " + this.oscarsNumber)
+        console.log(" - Profession: " + this.profession)
         console.log("****************************")
     }
-
     public getName(): string {
         return this.name;
     }

@@ -8,6 +8,7 @@ var Movie = /** @class */ (function () {
         this.nationality = nationality;
         this.genre = genre;
     }
+    //Metodos:
     Movie.prototype.getTitle = function () {
         return this.title;
     };

@@ -2,10 +2,9 @@ import { Movie } from "./Movie"
 import { Professional } from "./Professional"
 import { Imdb } from "./imdb"
 
-
-
 //Movie 1
 let movie1 = new Movie("Cadena Perpetua", 1994, "EEUU", "drama");
+
 //profesionales movie1
 let director1 = new Professional("Frank Darabont", 33, "Masculino", 68, 1.83, "Rubio", "Azul", "Blanco", false, "Estadounidense", 3, "Director")
 let distributor1 = new Professional("Luis", 43, "Masculino", 88, 1.89, "Catanyo", "Marron", "Negro", true, "Noruego", 1, "distribuidor")
@@ -13,11 +12,15 @@ let writer1 = new Professional("Stephen King", 53, "Masculino", 98, 1.93, "Pelir
 let producer1 = new Professional("John Steward", 53, "Masculino", 75, 1.73, "Pelirrojo", "Verde", "Amarillo", false, "Espanyol", 0, "productor")
 let actor1Movie1 = new Professional("Tim Robbins", 62, "Masculino", 70, 1.75, "Castanyo", "Verde", "Blanco", false, "estadounidense", 3, "actor")
 let actor2Movie1 = new Professional("Morgan Freeman", 83, "Masculino", 81, 1.90, "Gris", "Marron", "Negro", false, "Estadounidense", 1, "actor")
+
 let actors1 = [actor1Movie1, actor2Movie1]
 
 //Movie2
+
 let movie2 = new Movie("Vengadores: infinity war", 2018, "EEUU", "accion")
+
 //Profesionales Movie2
+
 let director2 = new Professional("Anthony Russo", 43, "Masculino", 78, 1.83, "Moreno", "Verde", "Blanco", false, "Estadounidense", 2, "Director")
 let distributor2 = new Professional("Rose Evans", 43, "Femenino", 64, 1.55, "Pelirroja", "Marron", "Negra", true, "Estadounidense", 0, "distribuidor")
 let writer2 = new Professional("Christopher Markus", 48, "Masculino", 76, 1.77, "Pelirrojo", "Verde", "Amarillo", false, "Canadiense", 3, "guionista")
@@ -39,7 +42,7 @@ movie1.setPlataform("Netflix");
 movie1.setNationality("EEUU y Canada");
 movie1.setLanguaje("ingles");
 movie1.setMainCharacterName("Andrew Dufresne")
-// movie1.mostrarDatosPeliculas();
+movie1.mostrarDatosPeliculas();
 
 
 //Metodos set movie 2
@@ -54,20 +57,13 @@ movie2.setPlataform("Disney");
 movie2.setNationality("EEUU");
 movie2.setLanguaje("ingles");
 movie2.setMainCharacterName("Tony Stark")
-// movie2.mostrarDatosPeliculas();
+movie2.mostrarDatosPeliculas();
 
-//Clase Imdb
+//Instanciación del objeto Imdb
+
 let arrPelis = [movie1, movie2]
 let imdb = new Imdb(arrPelis)
-// imdb.mostrarIMBD()
 
-
-let imdb1=JSON.stringify(imdb)
-const fs=require('fs');
-fs.writeFileSync("imdbBBDD.json",imdb1)
-fs.readFileSync("imdbBBDD.json")
-console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")
-))
-// imdb.escribirEnFicheroJSON("ficherito")
+console.log(imdb.mostrarIMBD())
 
 

@@ -17,11 +17,10 @@ var Imdb = /** @class */ (function () {
     };
     Imdb.prototype.obtenerInstanciaIMDB = function (nombreFichero) {
         var fs = require('fs');
-        var imdb33 = new Imdb([]);
+        var imdb = new Imdb([]);
         fs.readFileSync(nombreFichero);
-        //console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")
-        imdb33.peliculas = JSON.parse(fs.readFileSync(nombreFichero)).peliculas;
-        return imdb33;
+        imdb.peliculas = JSON.parse(fs.readFileSync(nombreFichero)).peliculas;
+        return imdb;
     };
     return Imdb;
 }());

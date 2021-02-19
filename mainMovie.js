@@ -35,7 +35,7 @@ movie1.setPlataform("Netflix");
 movie1.setNationality("EEUU y Canada");
 movie1.setLanguaje("ingles");
 movie1.setMainCharacterName("Andrew Dufresne");
-// movie1.mostrarDatosPeliculas();
+movie1.mostrarDatosPeliculas();
 //Metodos set movie 2
 movie2.setActors(actors2);
 movie2.setWriter(writer2);
@@ -48,14 +48,8 @@ movie2.setPlataform("Disney");
 movie2.setNationality("EEUU");
 movie2.setLanguaje("ingles");
 movie2.setMainCharacterName("Tony Stark");
-// movie2.mostrarDatosPeliculas();
-//Clase Imdb
+movie2.mostrarDatosPeliculas();
+//Instanciación del objeto Imdb
 var arrPelis = [movie1, movie2];
 var imdb = new imdb_1.Imdb(arrPelis);
-// imdb.mostrarIMBD()
-var imdb1 = JSON.stringify(imdb);
-var fs = require('fs');
-fs.writeFileSync("imdbBBDD.json", imdb1);
-fs.readFileSync("imdbBBDD.json");
-console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")));
-// imdb.escribirEnFicheroJSON("ficherito")
+console.log(imdb.mostrarIMBD());

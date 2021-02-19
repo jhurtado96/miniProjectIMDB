@@ -18,7 +18,6 @@ var Professional = /** @class */ (function () {
     }
     //Metodo mostrar datos de todos los atributos
     Professional.prototype.mostrarDatos = function () {
-        console.log("****************************");
         console.log(" - Name: " + this.name);
         console.log(" - Age: " + this.age);
         console.log(" - Genre: " + this.genre);
@@ -28,9 +27,9 @@ var Professional = /** @class */ (function () {
         console.log(" - Eye color: " + this.eyeColor);
         console.log(" - Race: " + this.race);
         console.log(" - Is retired?: " + this.isRetired);
-        console.log(" - Nationality :" + this.nationality);
-        console.log(" - Oscars Number :" + this.oscarsNumber);
-        console.log(" - Profession :" + this.profession);
+        console.log(" - Nationality: " + this.nationality);
+        console.log(" - Oscars Number: " + this.oscarsNumber);
+        console.log(" - Profession: " + this.profession);
         console.log("****************************");
     };
     Professional.prototype.getName = function () {
