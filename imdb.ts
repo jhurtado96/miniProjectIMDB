@@ -23,10 +23,11 @@ export class Imdb {
 
     public obtenerInstanciaIMDB(nombreFichero: string): Imdb {
         const fs = require('fs');
+        let imdb33 = new Imdb([])
         fs.readFileSync(nombreFichero)
         //console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")
-
-        return JSON.parse(fs.readFileSync(nombreFichero))
+        imdb33.peliculas=JSON.parse(fs.readFileSync(nombreFichero)).peliculas
+        return imdb33
     }
 
 }

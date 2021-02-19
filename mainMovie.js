@@ -55,7 +55,7 @@ var imdb = new imdb_1.Imdb(arrPelis);
 // imdb.mostrarIMBD()
 var imdb1 = JSON.stringify(imdb);
 var fs = require('fs');
-// fs.writeFileSync("imdbBBDD.json",imdb1)
+fs.writeFileSync("imdbBBDD.json", imdb1);
 fs.readFileSync("imdbBBDD.json");
 console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")));
 // imdb.escribirEnFicheroJSON("ficherito")

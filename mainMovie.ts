@@ -64,7 +64,7 @@ let imdb = new Imdb(arrPelis)
 
 let imdb1=JSON.stringify(imdb)
 const fs=require('fs');
-// fs.writeFileSync("imdbBBDD.json",imdb1)
+fs.writeFileSync("imdbBBDD.json",imdb1)
 fs.readFileSync("imdbBBDD.json")
 console.log(JSON.parse(fs.readFileSync("imdbBBDD.json")
 ))
