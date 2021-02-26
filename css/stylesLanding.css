@@ -1,0 +1,27 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('https://lawebdelacultura.com/wp-content/uploads/2018/02/85.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+}
+
+.color-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7)
+}
+
+.btn{
+    border-radius: 300px;
+    padding: 0.5rem 2rem;
+    font-weight: 700;
+}
