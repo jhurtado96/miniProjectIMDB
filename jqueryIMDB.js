@@ -118,7 +118,7 @@ var Movie = /** @class */ (function () {
     };
 
     Movie.prototype.stringDatosPelicula = function () {
-        let datosPeli ="- "+ this.nationality + "<br>" + "- "+ this.plataform + "<br>" + "- "+ this.releaseYear
+        let datosPeli ="- "+ this.nationality + "<br>" + "- "+ this.plataform + "<br>" + "- "+ this.releaseYear  
         return datosPeli
     }
 
@@ -165,6 +165,9 @@ var Professional = /** @class */ (function () {
         this.oscarsNumber = oscarsNumber;
         this.profession = profession;
         this.foto = foto;
+    }
+    Professional.prototype.stringDatosProfesional = function () {
+
     }
     //Metodo mostrar datos de todos los atributos
     Professional.prototype.mostrarDatos = function () {
@@ -350,16 +353,27 @@ let str = ""
                 '<div class="movie-image" ><img id="imagenPelicula" src="'+arrPelis[i].getFoto()+'" alt="" class="zoom">'+
                 '<div class="movie-info">'+
                 '<h2 id="titulo" class="movie-title">'+arrPelis[i].getTitle()+'</h2>'+
-                '<p id="datosPelicula" class="movie-sinopsis">'+arrPelis[i].stringDatosPelicula()+'</p><div class="links"><a class="watch" href="ver" >Ver</a>'+
+                '<p id="datosPelicula" class="movie-sinopsis">'+arrPelis[i].stringDatosPelicula()+'</p><div class="links"><a id="mostrarActores"  class="watch" href="ver" >Ver</a>'+
                         '<a class="down" href="down" >Descargar</a>'+
                     '</div></div></div></div>'
 
 
             $("#cartasPeliculas").append(str)
             }
+
         });
         
+let datos = ""
+        function meterPeli(){
+            let titulito= $("#tit").val
+            let anyito=""
+            let genero=""
+            let pais=""
+            let foto=""
 
+
+
+        }
 
 
 
