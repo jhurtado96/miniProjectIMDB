@@ -118,7 +118,7 @@ var Movie = /** @class */ (function () {
     };
 
     Movie.prototype.stringDatosPelicula = function () {
-        let datosPeli ="- "+ this.nationality + "<br>" + "- "+ this.plataform + "<br>" + "- "+ this.releaseYear  
+        let datosPeli ="- "+ this.nationality + "<br>" + "- "+ this.genre + "<br>" + "- "+ this.releaseYear  
         return datosPeli
     }
 
@@ -273,13 +273,7 @@ var writer1 = new Professional("Stephen King", 53, "Masculino", 98, 1.93, "Pelir
 var producer1 = new Professional("John Steward", 53, "Masculino", 75, 1.73, "Pelirrojo", "Verde", "Amarillo", false, "Espanyol", 0, "productor");
 var actor1Movie1 = new Professional("Tim Robbins", 62, "Masculino", 70, 1.75, "Castanyo", "Verde", "Blanco", false, "estadounidense", 3, "actor");
 var actor2Movie1 = new Professional("Morgan Freeman", 83, "Masculino", 81, 1.90, "Gris", "Marron", "Negro", false, "Estadounidense", 1, "actor");
-//Metodo mostrar propiedades de professional
-director1.mostrarDatos();
-distributor1.mostrarDatos();
-writer1.mostrarDatos();
-producer1.mostrarDatos();
-actor1Movie1.mostrarDatos();
-actor2Movie1.mostrarDatos();
+
 //Profesionales movie2
 var director2 = new Professional("Anthony Russo", 43, "Masculino", 78, 1.83, "Moreno", "Verde", "Blanco", false, "Estadounidense", 2, "Director");
 var distributor2 = new Professional("Rose Evans", 43, "Femenino", 64, 1.55, "Pelirroja", "Marron", "Negra", true, "Estadounidense", 0, "distribuidor");
@@ -287,13 +281,7 @@ var writer2 = new Professional("Christopher Markus", 48, "Masculino", 76, 1.77, 
 var producer2 = new Professional("Trench Ruffalo", 73, "Masculino", 70, 1.73, "rubio", "Verde", "Amarillo", false, "Ingles", 3, "productor");
 var actor1Movie2 = new Professional("Robert Downey Jr", 55, "Masculino", 71, 1.73, "Moreno", "Marron", "Blanco", false, "Estadounidense", 0, "actor");
 var actor2Movie2 = new Professional("Chris Evans", 39, "Masculino", 82, 1.91, "Rubio", "Azul", "Blanco", false, "Estadounidense", 0, "actor");
-// Metodo mostrar propiedades de professional
-director2.mostrarDatos();
-distributor2.mostrarDatos();
-writer2.mostrarDatos();
-producer2.mostrarDatos();
-actor1Movie2.mostrarDatos();
-actor2Movie2.mostrarDatos();
+
 //Movie 1
 var movie1 = new Movie("Cadena Perpetua", 1994, "EEUU", "drama", "https://online.tucineclasico.es/wp-content/uploads/2020/08/dc1fX265fZIIY5Hab8I7CdETyJy-200x300.jpg");
 var actors1 = [actor1Movie1, actor2Movie1];
@@ -303,7 +291,7 @@ var movie3 = new Movie("Origen", 2016, "Californa", "Ficcion","https://libreriad
 var movie4 = new Movie("Seven", 2002, "Washington", "accion","https://filmdiario.files.wordpress.com/2016/04/11166782_800.jpg?w=200&h=300");
 var movie5 = new Movie("Malditos Bastardos", 2001, "Francia", "accion","https://pelis28.net/wp-content/uploads/2020/02/dqu7nUtKTLdpM7DaJvD4zcSXhn1-200x300.jpg");
 var movie6 = new Movie("Harry Potter", 2005, "England", "fantastica","http://blogs.colgate.edu/bookstore/files/2016/07/harry-potter-and-the-prisoner-of-azkaban.11669-200x300.jpg");
-
+var movie7 = new Movie
 //Profesionales Movie2
 var actors2 = [actor1Movie2, actor2Movie2];
 //Metodos set movie 1
@@ -318,7 +306,7 @@ movie1.setPlataform("Netflix");
 movie1.setNationality("EEUU y Canada");
 movie1.setLanguaje("ingles");
 movie1.setMainCharacterName("Andrew Dufresne");
-movie1.mostrarDatosPeliculas();
+// movie1.mostrarDatosPeliculas();
 //Metodos set movie 2
 movie2.setActors(actors2);
 movie2.setWriter(writer2);
@@ -331,53 +319,62 @@ movie2.setPlataform("Disney");
 movie2.setNationality("EEUU");
 movie2.setLanguaje("ingles");
 movie2.setMainCharacterName("Tony Stark");
-movie2.mostrarDatosPeliculas();
-//
 
 
-//Instanciación del objeto Imdb
+
+
 var arrPelis = [movie1, movie2,movie3,movie4,movie5,movie6];
-// var imdb = new Imdb(arrPelis);
-
-// imdb.mostrarIMBD();
-
 
 let str = ""
+$(document).ready(function () {
+    
+    for(let i = 0;i<arrPelis.length;i++){
+        str = '<div class="image-poster">'+
+        '<div class="movie-image" ><img id="imagenPelicula" src="'+arrPelis[i].getFoto()+'" alt="" class="zoom">'+
+        '<div class="movie-info">'+
+        '<h2 id="titulo" class="movie-title">'+arrPelis[i].getTitle()+'</h2>'+
+        '<p id="datosPelicula" class="movie-sinopsis">'+arrPelis[i].stringDatosPelicula()+'</p><div class="links"><a id="mostrarActores"  class="watch" href="ver" >Ver</a>'+
+                '<a class="down" href="down" >Descargar</a>'+
+            '</div></div></div></div>'
+
+
+    $("#cartasPeliculas").append(str)
+    }
+
+});
 
 
 
+function mostrarLanuevaPelicula(){
+    let titulito= $("#tit").val()     
+        let anyito=$("#ano").val()
+        let genero=$("#gen").val()
+        let pais=$("#pais").val()
+        let foto=$("#imagencita").val()
+    let peliculaNueva = new Movie(titulito,anyito,genero,pais,foto)
+        arrPelis.push(peliculaNueva)
+        console.log(arrPelis)
+    let str2 =""
+    $(document).ready(function () {
+    
         
-        $(document).ready(function () {
-            for(let i = 0;i<arrPelis.length;i++){
-                str = '<div class="image-poster">'+
-                '<div class="movie-image" ><img id="imagenPelicula" src="'+arrPelis[i].getFoto()+'" alt="" class="zoom">'+
-                '<div class="movie-info">'+
-                '<h2 id="titulo" class="movie-title">'+arrPelis[i].getTitle()+'</h2>'+
-                '<p id="datosPelicula" class="movie-sinopsis">'+arrPelis[i].stringDatosPelicula()+'</p><div class="links"><a id="mostrarActores"  class="watch" href="ver" >Ver</a>'+
-                        '<a class="down" href="down" >Descargar</a>'+
-                    '</div></div></div></div>'
-
-
-            $("#cartasPeliculas").append(str)
-            }
-
-        });
-        
-let datos = ""
-        function meterPeli(){
-            let titulito= $("#tit").val
-            let anyito=""
-            let genero=""
-            let pais=""
-            let foto=""
-
-
-
+            str2 = '<div class="image-poster">'+
+            '<div class="movie-image" ><img id="imagenPelicula" src="'+peliculaNueva.getFoto()+'" alt="" class="zoom">'+
+            '<div class="movie-info">'+
+            '<h2 id="titulo" class="movie-title">'+peliculaNueva.getTitle()+'</h2>'+
+            '<p id="datosPelicula" class="movie-sinopsis">'+peliculaNueva.stringDatosPelicula()+'</p><div class="links"><a id="mostrarActores"  class="watch" href="ver" >Ver</a>'+
+                    '<a class="down" href="down" >Descargar</a>'+
+                '</div></div></div></div>'
+    
+    
+        $("#cartasPeliculas").append(str2)
         }
+    
+    );
+}
 
 
 
-   
 
 
 
